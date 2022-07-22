@@ -18,6 +18,7 @@ black = (0, 0, 0)
 
 # Tamanho da tela
 screen = pygame.display.set_mode((width, heigth))
+pygame.display.set_caption("Phyllotaxis")
 
 # PHYLLOTAXIS PRESETS
 n = 1  # contador
@@ -50,17 +51,18 @@ while 1:
             sys.exit()
 
     # Desenhando a PHYLLOTAXIS
+    rotate = n*0.001
     for i in range(n):
-        angle = i * getAngle(angleDegree)
+        angle = i * getAngle(angleDegree)+rotate
         radius = c * sqrt(i)
 
-        color = (200, (radius*3) % 255, 100*angle % 255)
+        color = (200, (radius*2) % 255, 50*angle % 255)
 
         drawCircle(angle, radius, color)
 
     pygame.display.update()
 
     # adicionando ao contador e colando um limite
-    n += 2
-    if n == 1000:
+    n += 1
+    if n == 2200:
         n = 0
