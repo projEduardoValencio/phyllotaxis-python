@@ -54,7 +54,7 @@ while 1:
         angle = i * getAngle(angleDegree)
         radius = c * sqrt(i)
 
-        color = (255*n % 255, (radius*3) % 255, 100*angle % 255)
+        color = (200, (radius*3) % 255, 100*angle % 255)
 
         drawCircle(angle, radius, color)
 
